@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    window.onload=()=>{
+        //类的继承
+
+        // class a {
+        //     constructor(name){
+        //         this.name=name
+        //     }
+        //     sayName(){
+        //         console.log(this.name)
+        //     }
+        // }
+        // class b extends a{
+        //     constructor(e){
+        //         super(e)
+        //     }
+        // }
+        // let c= new b('lisi')
+        // console.log(c.sayName())
+
+        //当函数a的内部函数b被函数a外的一个变量引用的时候，就创建了一个闭包
+        // a=()=>{
+        //     let i=0
+        //     b=()=>{
+        //         i++
+        //         console.log(i)
+        //     }
+        //     return b
+        // }
+        // let c=a()
+        // c()
+        // c()
+
+        //类的继承2
+        // class A {
+        //     constructor(){
+        //         this.x=9
+        //     }
+        //     print(){
+        //         console.log(this.x)
+        //     }
+        // }
+        // class B extends A {
+        //     constructor(){
+        //         super()
+        //         this.x=(i=>i=7)()
+        //     }
+        //     print(){
+        //         super.print()
+        //     }
+        // }
+        // const b= new B
+        // b.print()
+
+        // Promise对象
+
+        // timeout=(ms)=>{
+        //   return new Promise((resolve,reject)=>{
+        //     setTimeout(resolve,ms,'done')
+        //   })
+        // }
+        // timeout(300).then((value)=>{
+        //   console.log(value)
+        // })
+
+        // Promise对象2 异步加载图片
+        loadImgAsync=(url)=>{
+          return new Promise((resolve,reject)=>{
+            const img=new Image()
+            img.onload=()=>{
+              resolve(img)
+            }
+            img.onerror=()=>{
+              reject(new Error('can not find img at'+url))
+            }
+            img.src='./y.png'
+          })
+        }
+        loadImgAsync()
+    }
+</script>
+</html>
